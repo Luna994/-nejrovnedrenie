@@ -75,14 +75,81 @@
     }
 
     @keyframes floatIn {
-      0% {
-        transform: translateY(40px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+      0% { transform: translateY(40px); opacity: 0; }
+      100% { transform: translateY(0); opacity: 1; }
+    }
+
+    .about {
+      background-image: url('assets/фон2.png');
+      background-size: cover;
+      background-position: center;
+      padding: 80px 40px;
+      text-align: center;
+    }
+
+    .about h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+
+    .about h3 {
+      font-size: 1.5rem;
+      margin-bottom: 60px;
+      font-weight: 400;
+    }
+
+    .founders {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .founder {
+      max-width: 300px;
+    }
+
+    .founder img {
+      border-radius: 50%;
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .founder h4 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .founder p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .founder-icon {
+      width: 40px;
+      margin-bottom: 10px;
+    }
+
+    .quote {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      text-align: left;
+    }
+
+    .quote img {
+      width: 32px;
+      height: 32px;
     }
 
     footer {
@@ -107,6 +174,31 @@
     </div>
     <div class="hero-image">
       <img src="assets/1.png" alt="Персонаж">
+    </div>
+  </section>
+
+  <section class="about">
+    <h2>НЕЙРОВНЕДРЕНИЕ ОТ ПРАКТИКОВ, А НЕ ТЕОРЕТИКОВ</h2>
+    <h3>основатели агентства <strong>"НейроВнедрение"</strong></h3>
+
+    <div class="founders">
+      <div class="founder">
+        <img src="assets/alex.png" alt="Алексей Велчев">
+        <img src="assets/кавычки.png" class="founder-icon" alt="иконка">
+        <h4>АЛЕКСЕЙ ВЕЛЧЕВ</h4>
+        <p>эксперт по нейросетям, цифровым технологиям и AI-монетизации, создатель успешного онлайн-сообщества</p>
+      </div>
+      <div class="founder">
+        <img src="assets/yliya.png" alt="Юлия Михайлова">
+        <img src="assets/лампочка.png" class="founder-icon" alt="иконка">
+        <h4>ЮЛИЯ МИХАЙЛОВА</h4>
+        <p>эксперт по AI-автоматизации, чат-ботам и внедрению AI-решений в бизнес, автор книг о нейросетях</p>
+      </div>
+    </div>
+
+    <div class="quote">
+      <img src="assets/кавычки.png" alt="Кавычки">
+      <p>Мы создали эту программу, чтобы вы получили реальную отдачу от ИИ уже с первых дней. Минимум ручной работы, максимум результата.</p>
     </div>
   </section>
 
