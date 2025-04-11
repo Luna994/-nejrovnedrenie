@@ -29,43 +29,38 @@
       color: #ffffff;
       animation: floatIn 2s ease-out forwards;
     }
-    .hero {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 60px 80px;
-    }
-    .hero-content {
-      max-width: 50%;
-      z-index: 2;
-    }
-    .hero h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      margin-bottom: 20px;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .hero p {
-      font-size: 1.6rem;
-      line-height: 1.5;
-      margin-bottom: 20px;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .agency {
-      font-size: 1.1rem;
-      opacity: 0.85;
-      font-weight: 500;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .hero-image {
-      max-width: 45%;
-    }
-    .hero-image img {
-      width: 100%;
-      height: auto;
-      animation: floatIn 2s ease-out forwards;
-    }  /* Медиа-запрос для мобильных устройств */
+    <style>
+  /* Стили для desktop остаются без изменений */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+  }
+  .hero-content {
+    max-width: 50%;
+    z-index: 2;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+  }
+  .hero p {
+    font-size: 1.6rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .hero-image {
+    max-width: 45%;
+  }
+  .hero-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Медиа-запрос для мобильных устройств */
   @media (max-width: 768px) {
     .hero {
       flex-direction: column;
@@ -91,6 +86,8 @@
       margin-bottom: 15px;
     }
   }
+</style>
+
 </style>
     /* Общие отступы для секций (кроме hero) */
     .about,
