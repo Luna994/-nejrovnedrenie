@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>НейроВнедрение</title>
   <style>
     * {
@@ -27,6 +27,7 @@
     header h1 {
       font-size: 2em;
       color: #ffffff;
+      animation: floatIn 2s ease-out forwards;
     }
     .hero {
       min-height: 100vh;
@@ -43,27 +44,29 @@
       font-size: 3rem;
       font-weight: 800;
       margin-bottom: 20px;
+      animation: floatIn 2s ease-out forwards;
     }
     .hero p {
       font-size: 1.6rem;
       line-height: 1.5;
       margin-bottom: 20px;
+      animation: floatIn 2s ease-out forwards;
     }
     .agency {
       font-size: 1.1rem;
       opacity: 0.85;
       font-weight: 500;
+      animation: floatIn 2s ease-out forwards;
     }
-    /* Для hero-изображения убираем анимацию по загрузке,
-       оно будет тоже анимировано через IntersectionObserver */
     .hero-image {
       max-width: 45%;
     }
     .hero-image img {
       width: 100%;
       height: auto;
+      animation: floatIn 2s ease-out forwards;
     }
-    /* Единые отступы для секций (не включая hero) */
+    /* Отступы для секций, кроме hero */
     .about,
     .benefits,
     .business-results,
@@ -86,6 +89,7 @@
     .founder {
       max-width: 300px;
       text-align: center;
+      animation: floatIn 2s ease-out forwards;
     }
     .founder img {
       border-radius: 50%;
@@ -93,33 +97,38 @@
       height: 200px;
       object-fit: cover;
       margin-bottom: 15px;
+      animation: floatIn 2s ease-out forwards;
     }
     .founder h4 {
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 10px;
+      animation: floatIn 2s ease-out forwards;
     }
     .founder p {
       font-size: 1rem;
       line-height: 1.4;
+      animation: floatIn 2s ease-out forwards;
     }
     .lamp-wrapper {
       position: relative;
       top: 60px;
+      animation: floatIn 2s ease-out forwards;
     }
     .lamp-wrapper img {
       width: 90px;
+      animation: floatIn 2s ease-out forwards;
     }
     .quote {
       position: relative;
       margin-top: 50px;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
       font-size: 1.2rem;
       line-height: 1.5;
       padding-left: 60px;
       text-align: left;
+      animation: floatIn 2s ease-out forwards;
     }
     .quote-icon {
       position: absolute;
@@ -127,6 +136,7 @@
       left: 0;
       width: 40px;
       height: auto;
+      animation: floatIn 2s ease-out forwards;
     }
     .benefits-container,
     .business-container {
@@ -147,6 +157,7 @@
     .business-image img {
       max-width: 100%;
       height: auto;
+      animation: floatIn 2s ease-out forwards;
     }
     .benefits-list,
     .business-list {
@@ -164,8 +175,8 @@
       line-height: 1.5;
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(4px);
+      animation: floatIn 2s ease-out forwards;
     }
-    /* Flex-секции */
     .flex-section {
       display: flex;
       align-items: center;
@@ -190,13 +201,15 @@
       border-radius: 8px;
       font-size: 1.1rem;
       line-height: 1.5;
+      animation: floatIn 2s ease-out forwards;
     }
-    /* Заголовок секции "НЕЙРОВНЕДРЕНИЕ +" - центрирован и крупный */
+    /* Заголовок секции "НЕЙРОВНЕДРЕНИЕ +" */
     .flex-section .image-right h1 {
       width: 100%;
       text-align: center;
       font-size: 3rem;
       margin-bottom: 20px;
+      animation: floatIn 2s ease-out forwards;
     }
     .centered-image {
       text-align: center;
@@ -206,17 +219,18 @@
       padding: 20px;
       background-color: rgba(0, 0, 0, 0.7);
       color: #ccc;
+      animation: floatIn 2s ease-out forwards;
     }
-    /* Стартовые стили для анимации (прозрачность и масштаб) */
-    .scroll-animate {
-      opacity: 0;
-      transform: scale(0.9);
-      transition: all 1.5s ease-out;
-    }
-    /* Видимые элементы становятся полностью непрозрачными и нормального масштаба */
-    .scroll-animate.visible {
-      opacity: 1;
-      transform: scale(1);
+    /* Ключевые кадры анимации: элементы начинают с небольшого смещения вниз и нулевой прозрачности, затем плавно появляются */
+    @keyframes floatIn {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
   </style>
 </head>
@@ -227,10 +241,8 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1>Агентство "НейроВнедрение"</h1>
-        
       <h1>НЕЙРОВНЕДРЕНИЕ</h1>
-      <p>С ПРОФЕССИОНАЛЬНЫМ<br> СОПРОВОЖДЕНИЕМ<br> "ПОД КЛЮЧ"</p>
+      <p>С ПРОФЕССИОНАЛЬНЫМ<br>СОПРОВОЖДЕНИЕМ<br>"ПОД КЛЮЧ"</p>
       <span class="agency">АГЕНТСТВО “НейроВнедрение”</span>
     </div>
     <div class="hero-image">
@@ -238,41 +250,36 @@
     </div>
   </section>
 
-  <section class="about scroll-animate">
-    <h2>НЕЙРОВНЕДРЕНИЕ ОТ ПРАКТИКОВ, 
-      А НЕ ТЕОРЕТИКОВ</h2>
+  <section class="about">
+    <h2>НЕЙРОВНЕДРЕНИЕ ОТ ПРАКТИКОВ, А НЕ ТЕОРЕТИКОВ</h2>
     <h3>основатели агентства <strong>"НейроВнедрение"</strong></h3>
-
     <div class="founders">
-      <div class="founder scroll-animate">
+      <div class="founder">
         <img src="assets/alex.png" alt="Алексей Велчев">
         <h4>АЛЕКСЕЙ ВЕЛЧЕВ</h4>
         <p>эксперт по нейросетям, цифровым технологиям и AI-монетизации, создатель успешного онлайн-сообщества</p>
       </div>
-
-      <div class="lamp-wrapper scroll-animate">
+      <div class="lamp-wrapper">
         <img src="assets/лампочка.png" alt="AI лампочка">
       </div>
-
-      <div class="founder scroll-animate">
+      <div class="founder">
         <img src="assets/yliya.png" alt="Юлия Михайлова">
         <h4>ЮЛИЯ МИХАЙЛОВА</h4>
         <p>эксперт по AI-автоматизации, чат-ботам и внедрению AI-решений в бизнес, автор книг о нейросетях</p>
       </div>
     </div>
-
-    <div class="quote scroll-animate">
+    <div class="quote">
       <img class="quote-icon" src="assets/кавычки.png" alt="кавычки">
       <p>Мы создали эту программу, чтобы вы получили реальную отдачу от ИИ уже с первых дней. Минимум ручной работы, максимум результата.</p>
     </div>
   </section>
 
-  <section class="benefits scroll-animate">
+  <section class="benefits">
     <div class="benefits-container">
-      <div class="benefits-image scroll-animate">
-        <img src="assets/часы.png" alt="Часы и иконки ИИ" />
+      <div class="benefits-image">
+        <img src="assets/часы.png" alt="Часы и иконки ИИ">
       </div>
-      <div class="benefits-list scroll-animate">
+      <div class="benefits-list">
         <div class="benefit-card">• Полностью автоматизировать все рутинные задачи без помощи программистов</div>
         <div class="benefit-card">• Самостоятельно создавать профессиональный контент на основе передовых ИИ-технологий</div>
         <div class="benefit-card">• Значительно повысить узнаваемость своего бренда и личного бренда</div>
@@ -281,12 +288,12 @@
     </div>
   </section>
 
-  <section class="business-results scroll-animate">
+  <section class="business-results">
     <div class="business-container">
-      <div class="business-image scroll-animate">
-        <img src="assets/мир.png" alt="Глобус и геометки" />
+      <div class="business-image">
+        <img src="assets/мир.png" alt="Глобус и геометки">
       </div>
-      <div class="business-list scroll-animate">
+      <div class="business-list">
         <div class="business-card">• Радикально снизить затраты из-за отсутствия необходимости оплачивать работу массе сотрудников и фрилансерам</div>
         <div class="business-card">• Увеличить заработок и доход</div>
         <div class="business-card">• Получите возможность масштабировать свои процессы и бизнес</div>
@@ -295,11 +302,11 @@
     </div>
   </section>
 
-  <section class="flex-section scroll-animate">
-    <div class="image-left scroll-animate">
-      <img src="assets/бот1.png" alt="бот1" />
+  <section class="flex-section">
+    <div class="image-left">
+      <img src="assets/бот1.png" alt="бот1">
     </div>
-    <div class="text-block scroll-animate">
+    <div class="text-block">
       <div class="text-card">• Создайте автопривлечение новых клиентов без лишних затрат.</div>
       <div class="text-card">• Эффективная работа нейросотрудников 24/7/365 без зарплат.</div>
       <div class="text-card">• Умные ИИ-чат-боты для воронок продаж.</div>
@@ -307,11 +314,11 @@
     </div>
   </section>
 
-  <section class="flex-section scroll-animate">
-    <div class="image-right scroll-animate">
-      <img src="assets/бот2.png" alt="бот2" />
+  <section class="flex-section">
+    <div class="image-right">
+      <img src="assets/бот2.png" alt="бот2">
     </div>
-    <div class="text-block scroll-animate">
+    <div class="text-block">
       <div class="text-card">• Освоите искусство эффективного промптинга для максимальной пользы от ИИ.</div>
       <div class="text-card">• Узнаете профессиональные секреты и лайфхаки работы с ChatGPT.</div>
       <div class="text-card">• Получите 3-5 уникальных GPT-ассистентов (тренер по продажам, маркетолог, аналитик, контент-менеджер).</div>
@@ -319,11 +326,11 @@
     </div>
   </section>
 
-  <section class="flex-section scroll-animate">
-    <div class="image-left scroll-animate">
-      <img src="assets/ассистент.png" alt="ассистент" />
+  <section class="flex-section">
+    <div class="image-left">
+      <img src="assets/ассистент.png" alt="ассистент">
     </div>
-    <div class="text-block scroll-animate">
+    <div class="text-block">
       <div class="text-card">• Овладеете созданием профессиональных видеороликов (рилсы, shorts) с автоматическим монтажом в InVideo.</div>
       <div class="text-card">• Создадите уникальный цифровой аватар в HeyGen и начнёте генерировать видео-контент уже в первый день обучения.</div>
       <div class="text-card">• Запустите собственный чат-бот с помощью BotFather в Telegram.</div>
@@ -331,11 +338,11 @@
     </div>
   </section>
 
-  <section class="flex-section scroll-animate">
-    <div class="image-right scroll-animate">
-      <img src="assets/бот3.png" alt="бот3" />
+  <section class="flex-section">
+    <div class="image-right">
+      <img src="assets/бот3.png" alt="бот3">
     </div>
-    <div class="text-block scroll-animate">
+    <div class="text-block">
       <div class="text-card">• Настроите автоматизированные ответы на комментарии и проверку подписчиков в Instagram через ChatPlace.</div>
       <div class="text-card">• Научитесь создавать мощные автоматизации без единой строчки кода.</div>
       <div class="text-card">• Узнаете, как использовать все возможности платформы ElevenLabs для клонирования голоса и создания голосовых ассистентов.</div>
@@ -343,11 +350,11 @@
     </div>
   </section>
 
-  <section class="flex-section scroll-animate">
-    <div class="image-left scroll-animate">
-      <img src="assets/завод.png" alt="завод" />
+  <section class="flex-section">
+    <div class="image-left">
+      <img src="assets/завод.png" alt="завод">
     </div>
-    <div class="text-block scroll-animate">
+    <div class="text-block">
       <div class="text-card">• Интегрируете GPT-ассистента с Google Таблицами при помощи MAKE для автоматизированного создания и управления контентом.</div>
       <div class="text-card">• Запустите контент-завод, с продвинутыми сценариями автоматического постинга в Telegram, Instagram и Facebook с помощью MAKE.</div>
       <div class="text-card">• Научитесь использовать проверенные сценарии для эффективного продвижения в соцсетях и рекламных кампаниях.</div>
@@ -355,76 +362,10 @@
     </div>
   </section>
 
-  <section class="flex-section scroll-animate">
-    <div class="image-right scroll-animate">
+  <section class="flex-section">
+    <div class="image-right">
       <h1>НЕЙРОВНЕДРЕНИЕ +</h1>
-      <img src="assets/ассистент2.png" alt="ассистент2" />
+      <img src="assets/ассистент2.png" alt="ассистент2">
     </div>
-    <div class="text-block scroll-animate">
-      <div class="text-card">• Станете обладателем целой команды кастомных нейросодрудников, разработанных под задачи вашего бизнеса.</div>
-      <div class="text-card">• Освойте создание продвинутого голосового Telegram-бота, с возможностью проводить презентации продукта или услуги, вести диалог, отвечать на вопросы и вести клиента по воронке.</div>
-      <div class="text-card">• Запустите Telegram-бота с встроенной бизнес-моделью — он не просто отвечает, а автоматически продаёт, прогревает и удерживает клиентов. Работает на платной подписке в Telegram.</div>
-    </div>
-  </section>
-
-  <section class="flex-section scroll-animate">
-    <div class="image-left scroll-animate">
-      <img src="assets/касание.png" alt="касание" />
-    </div>
-    <div class="text-block scroll-animate">
-      <div class="text-card">
-        • Внедрите продвинутые сценарии из профессиональных кастомных шаблонов автоматизации в MAKE (блюпринты):<br>
-        – для автопостинга с 5–6 иллюстрациями в одном посте (Telegram, Instagram, Facebook, Threads),<br>
-        – для генерации видео с цифровым аватаром, полностью готового к публикации.
-      </div>
-      <div class="text-card">• Персональная онлайн консультация (2 часа).</div>
-    </div>
-  </section>
-
-  <!-- Секции тарифов и контактов оставлены без изменений -->
-  <section class="centered-image scroll-animate">
-   
-  </section>
-  <section class="centered-image scroll-animate">
-   
-  </section>
-
-  <footer>
-    <p>© 2025 Агентство "НейроВнедрение"</p>
-  </footer>
-  
-  <!-- Скрипт для анимации при скролле -->
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const scrollElements = document.querySelectorAll('.scroll-animate');
-
-      const elementInView = (el, dividend = 1) => {
-        const elementTop = el.getBoundingClientRect().top;
-        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
-      };
-
-      const displayScrollElement = (element) => {
-        element.classList.add('visible');
-      };
-
-      const hideScrollElement = (element) => {
-        element.classList.remove('visible');
-      };
-
-      const handleScrollAnimation = () => {
-        scrollElements.forEach((el) => {
-          if (elementInView(el, 1.25)) {
-            displayScrollElement(el);
-          }
-        })
-      }
-
-      window.addEventListener('scroll', () => { 
-        handleScrollAnimation();
-      });
-      // Запуск анимации сразу для элементов, находящихся в видимой области при загрузке
-      handleScrollAnimation();
-    });
-  </script>
-</body>
-</html>
+    <div class="text-block">
+      <div class="text-card">• Станете обладателем целой команды кастомных нейросодрудников, разработанных под задачи вашего
