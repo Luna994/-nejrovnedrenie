@@ -6,85 +6,90 @@
   <title>НейроВнедрение</title>
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
-      color: #333;
+      color: #ffffff;
     }
 
     header {
-      background-color: #fff;
+      background-color: #000000;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
 
     header h1 {
       font-size: 2em;
+      color: #ffffff;
     }
 
     .hero {
-      background-image: url('assets/1.png');
+      background-image: url('assets/фон.png');
       background-size: cover;
       background-position: center;
       min-height: 100vh;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      padding: 60px 30px;
-      color: white;
+      justify-content: space-between;
+      padding: 60px 80px;
       position: relative;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.3);
     }
 
     .hero-content {
-      position: relative;
-      z-index: 1;
-      max-width: 600px;
+      max-width: 50%;
+      z-index: 2;
     }
 
     .hero h1 {
       font-size: 3rem;
-      margin-bottom: 20px;
       font-weight: 800;
-      letter-spacing: 1px;
+      margin-bottom: 20px;
     }
 
     .hero p {
-      font-size: 1.5rem;
-      line-height: 1.6;
-      font-weight: 300;
+      font-size: 1.6rem;
+      line-height: 1.5;
       margin-bottom: 20px;
     }
 
     .agency {
-      font-size: 1rem;
-      font-weight: 500;
+      font-size: 1.1rem;
       opacity: 0.85;
+      font-weight: 500;
+    }
+
+    .hero-image {
+      max-width: 45%;
+      animation: floatIn 2s ease-out forwards;
+      opacity: 0;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+    }
+
+    @keyframes floatIn {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
 
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #ffffff;
-      box-shadow: 0 -2px 4px rgba(0,0,0,0.05);
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #0073e6;
-      text-decoration: none;
+      background-color: #000;
+      color: #ccc;
     }
   </style>
 </head>
@@ -99,6 +104,9 @@
       <h1>НЕЙРОВНЕДРЕНИЕ</h1>
       <p>С ПРОФЕССИОНАЛЬНЫМ<br> СОПРОВОЖДЕНИЕМ<br> "ПОД КЛЮЧ"</p>
       <span class="agency">АГЕНТСТВО “НейроВнедрение”</span>
+    </div>
+    <div class="hero-image">
+      <img src="assets/1.png" alt="Персонаж">
     </div>
   </section>
 
