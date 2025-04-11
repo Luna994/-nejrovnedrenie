@@ -10,7 +10,6 @@
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-image: url('assets/фон1.png');
@@ -20,18 +19,15 @@
       background-position: center;
       color: #ffffff;
     }
-
     header {
       background-color: rgba(0, 0, 0, 0.7);
       padding: 20px;
       text-align: center;
     }
-
     header h1 {
       font-size: 2em;
       color: #ffffff;
     }
-
     .hero {
       min-height: 100vh;
       display: flex;
@@ -39,63 +35,52 @@
       justify-content: space-between;
       padding: 60px 80px;
     }
-
     .hero-content {
       max-width: 50%;
       z-index: 2;
     }
-
     .hero h1 {
       font-size: 3rem;
       font-weight: 800;
       margin-bottom: 20px;
     }
-
     .hero p {
       font-size: 1.6rem;
       line-height: 1.5;
       margin-bottom: 20px;
     }
-
     .agency {
       font-size: 1.1rem;
       opacity: 0.85;
       font-weight: 500;
     }
-
     .hero-image {
       max-width: 45%;
       animation: floatIn 2s ease-out forwards;
       opacity: 0;
     }
-
     .hero-image img {
       width: 100%;
       height: auto;
     }
-
     @keyframes floatIn {
       0% { transform: translateY(40px); opacity: 0; }
       100% { transform: translateY(0); opacity: 1; }
     }
-
     .about {
       padding: 80px 40px;
       text-align: center;
     }
-
     .about h2 {
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 20px;
     }
-
     .about h3 {
       font-size: 1.5rem;
       margin-bottom: 60px;
       font-weight: 400;
     }
-
     .founders {
       display: flex;
       justify-content: space-around;
@@ -105,12 +90,10 @@
       margin-bottom: 40px;
       position: relative;
     }
-
     .founder {
       max-width: 300px;
       text-align: center;
     }
-
     .founder img {
       border-radius: 50%;
       width: 200px;
@@ -118,27 +101,22 @@
       object-fit: cover;
       margin-bottom: 15px;
     }
-
     .founder h4 {
       font-size: 1.2rem;
       font-weight: bold;
       margin-bottom: 10px;
     }
-
     .founder p {
       font-size: 1rem;
       line-height: 1.4;
     }
-
     .lamp-wrapper {
       position: relative;
       top: 60px;
     }
-
     .lamp-wrapper img {
       width: 90px;
     }
-
     .quote {
       position: relative;
       margin-top: 50px;
@@ -150,7 +128,6 @@
       padding-left: 60px;
       text-align: left;
     }
-
     .quote-icon {
       position: absolute;
       top: -10px;
@@ -158,11 +135,9 @@
       width: 40px;
       height: auto;
     }
-
     .benefits, .business-results {
       padding: 80px 40px;
     }
-
     .benefits-container, .business-container {
       display: flex;
       flex-wrap: wrap;
@@ -172,24 +147,20 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .benefits-image, .business-image {
       flex: 1 1 40%;
       text-align: center;
     }
-
     .benefits-image img, .business-image img {
       max-width: 100%;
       height: auto;
     }
-
     .benefits-list, .business-list {
       flex: 1 1 55%;
       display: flex;
       flex-direction: column;
       gap: 20px;
     }
-
     .benefit-card, .business-card {
       border: 1px solid #ffffff;
       border-radius: 12px;
@@ -199,7 +170,46 @@
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(4px);
     }
-
+    /* Стили для flex-секции */
+    .flex-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 40px;
+      flex-wrap: wrap;
+    }
+    .image-left,
+    .image-right {
+      flex: 1 1 40%;
+      text-align: center;
+    }
+    .text-block {
+      flex: 1 1 55%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .text-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    /* Анимация изображений в flex-секциях */
+    .flex-section img {
+      animation: fadeInScale 1.5s ease-out forwards;
+    }
+    @keyframes fadeInScale {
+      0% { opacity: 0; transform: scale(0.9); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+    /* Стили для пустых секций тарифов и контактов */
+    .centered-image {
+      text-align: center;
+      padding: 60px 40px;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -297,9 +307,104 @@
     </div>
   </section>
 
+  <!-- Пример повторяющегося блока с изображением слева -->
+  <section class="flex-section">
+    <div class="image-left">
+      <img src="assets/бот1.png" alt="бот1" />
+    </div>
+    <div class="text-block">
+      <div class="text-card">• Создайте автопривлечение новых клиентов без лишних затрат.</div>
+      <div class="text-card">• Эффективная работа нейросотрудников 24/7/365 без зарплат.</div>
+      <div class="text-card">• Умные ИИ-чат-боты для воронок продаж.</div>
+      <div class="text-card">• Собственный GPT-ассистент на базе OpenAI.</div>
+    </div>
+  </section>
+  <section class="flex-section">
+    <div class="image-right">
+      <img src="assets/бот2.png" alt="бот2" />
+    </div>
+    <div class="text-block">
+      <div class="text-card">• Освоите искусство эффективного промптинга для максимальной пользы от ИИ.</div>
+      <div class="text-card">• Узнаете профессиональные секреты и лайфхаки работы с ChatGPT.</div>
+      <div class="text-card">• Получите 3-5 уникальных GPT-ассистентов (тренер по продажам, маркетолог, аналитик, контент-менеджер).</div>
+      <div class="text-card">• Научитесь создавать впечатляющие презентации, сайты и инфопродукты за считанные минуты в Gamma AI, Яркие презентации, лендинги и видео без усилий!</div>
+    </div>
+  </section>
+
+  <section class="flex-section">
+    <div class="image-left">
+      <img src="assets/ассистент.png" alt="ассистент" />
+    </div>
+    <div class="text-block">
+      <div class="text-card">• Овладеете созданием профессиональных видеороликов (рилсы, shorts) с автоматическим монтажом в InVideo.</div>
+      <div class="text-card">• Создадите уникальный цифровой аватар в HeyGen и начнёте генерировать видео-контент уже в первый день обучения.</div>
+      <div class="text-card">• Запустите собственный чат-бот с помощью BotFather в Telegram.</div>
+      <div class="text-card">• Научитесь создавать, и развивать свой канал или сообщество в Telegram с нейро-админами и нейро-модераторами.</div>
+    </div>
+  </section>
+
+  <section class="flex-section">
+    <div class="image-right">
+      <img src="assets/бот3.png" alt="бот3" />
+    </div>
+    <div class="text-block">
+      <div class="text-card">• Настроите автоматизированные ответы на комментарии и проверку подписчиков в Instagram через ChatPlace.</div>
+      <div class="text-card">• Научитесь создавать мощные автоматизации без единой строчки кода.</div>
+      <div class="text-card">• Узнаете, как использовать все возможности платформы ElevenLabs для клонирования голоса и создания голосовых ассистентов.</div>
+      <div class="text-card">• Получите готового GPT-ассистента, который станет вашим незаменимым нейро-сотрудником!</div>
+    </div>
+  </section>
+  <section class="flex-section">
+    <div class="image-left">
+      <img src="assets/завод.png" alt="завод" />
+    </div>
+    <div class="text-block">
+      <div class="text-card">• Интегрируете GPT-ассистента с Google Таблицами при помощи MAKE для автоматизированного создания и управления контентом.</div>
+      <div class="text-card">• Запустите контент-завод, с продвинутыми сценариями автоматического постинга в Telegram, Instagram и Facebook с помощью MAKE.</div>
+      <div class="text-card">• Научитесь использовать проверенные сценарии для эффективного продвижения в соцсетях и рекламных кампаниях.</div>
+      <div class="text-card">• Создадите видеоконтент нового уровня с цифровым аватаром от HeyGen.</div>
+    </div>
+  </section>
+
+  <!-- Блок НЕйровнедрение+ -->
+  <section class="flex-section">
+    <div class="image-right">
+      <h1>НЕЙРОВНЕДРЕНИЕ +</h1>
+      <img src="assets/ассистент2.png" alt="ассистент2" />
+    </div>
+    <div class="text-block">
+      <div class="text-card">• Станете обладателем целой команды кастомных нейросодрудников, разработанных под задачи вашего бизнеса.</div>
+      <div class="text-card">• Освойте создание продвинутого голосового Telegram-бота, с возможностью проводить презентации продукта или услуги, вести диалог, отвечать на вопросы и вести клиента по воронке.</div>
+      <div class="text-card">• Запустите Telegram-бота с встроенной бизнес-моделью — он не просто отвечает, а автоматически продаёт, прогревает и удерживает клиентов. Работает на платной подписке в Telegram.</div>
+    </div>
+  </section>
+
+  <section class="flex-section">
+    <div class="image-left">
+      <img src="assets/касание.png" alt="касание" />
+    </div>
+    <div class="text-block">
+      <div class="text-card">
+        • Внедрите продвинутые сценарии из профессиональных кастомных шаблонов автоматизации в MAKE (блюпринты):<br>
+        – для автопостинга с 5–6 иллюстрациями в одном посте (Telegram, Instagram, Facebook, Threads),<br>
+        – для генерации видео с цифровым аватаром, полностью готового к публикации.
+      </div>
+      <div class="text-card">• Персональная онлайн консультация (2 часа).</div>
+    </div>
+  </section>
+
+  <!-- Блок тарифов -->
+  <section class="centered-image">
+   
+  </section>
+
+  <!-- Блок контактов -->
+  <section class="centered-image">
+   
+  </section>
+
   <footer>
     <p>© 2025 Агентство "НейроВнедрение"</p>
   </footer>
-
 </body>
 </html>
