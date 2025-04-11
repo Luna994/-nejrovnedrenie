@@ -5,11 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>НейроВнедрение</title>
   <style>
+    /* Сброс отступов и настройка box-sizing */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+    /* Основные стили для body */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-image: url('assets/фон1.png');
@@ -19,6 +21,7 @@
       background-position: center;
       color: #ffffff;
     }
+    /* Стили для шапки */
     header {
       padding: 20px;
       text-align: center;
@@ -27,6 +30,7 @@
       font-size: 2em;
       color: #ffffff;
     }
+    /* Стили для hero-блока */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -71,6 +75,7 @@
     .about {
       text-align: center;
     }
+    /* Стили для основателей */
     .founders {
       display: flex;
       justify-content: space-around;
@@ -100,6 +105,7 @@
       font-size: 1rem;
       line-height: 1.4;
     }
+    /* Стили для лампочки – не применяется универсальный класс */
     .lamp-wrapper {
       position: relative;
       top: 60px;
@@ -107,6 +113,7 @@
     .lamp-wrapper img {
       width: 90px;
     }
+    /* Стили для цитаты – не затрагиваем кавычки */
     .quote {
       position: relative;
       margin-top: 50px;
@@ -124,6 +131,7 @@
       width: 40px;
       height: auto;
     }
+    /* Контейнеры для секций с изображениями и текстом */
     .benefits-container, 
     .business-container {
       display: flex;
@@ -161,6 +169,7 @@
       background: rgba(255, 255, 255, 0.05);
       backdrop-filter: blur(4px);
     }
+    /* Стили для flex-секций с изображением и текстом */
     .flex-section {
       display: flex;
       align-items: center;
@@ -186,24 +195,25 @@
       font-size: 1.1rem;
       line-height: 1.5;
     }
-    /* Исправление для заголовка с ассистентом2:
-       предотвращаем перенос «+» и уменьшаем отступ */
+    /* Предотвращаем перенос символов в заголовке ассистента2 */
     .flex-section .image-right h1 {
       white-space: nowrap;
       margin-bottom: 10px;
       font-size: 3rem;
       text-align: center;
     }
-    /* Новый стиль для секций с уменьшенными отступами */
+    /* Секция с уменьшенными отступами */
     .reduced-gap {
       padding: 5px 5px;
     }
+    /* Стили для подвала */
     footer {
       text-align: center;
       padding: 5px;
       background-color: rgba(0, 0, 0, 0.7);
       color: #ccc;
     }
+    /* Анимация появления элементов */
     @keyframes floatIn {
       0% {
         transform: translateY(40px);
@@ -214,12 +224,59 @@
         opacity: 1;
       }
     }
-    /* По умолчанию элементы с анимацией при скролле на паузе */
+    /* Элементы, которые анимируются при скролле */
     .scroll-animate {
       animation: floatIn 2s ease-out forwards;
       animation-play-state: paused;
     }
-    /* Медиа-запрос для адаптации блока hero на мобильных устройствах */
+    /* Универсальный класс для изображений (за исключением лампочки и кавычек) */
+    .uniform {
+      width: 300px;
+      height: auto;
+      object-fit: cover;
+    }
+    /* Стили для таблицы с тарифами */
+    .pricing {
+      padding: 40px 20px;
+      text-align: center;
+    }
+    .pricing h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    .table-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+      font-size: 1rem;
+    }
+    thead {
+      background: rgba(255,255,255,0.1);
+    }
+    th, td {
+      border: 1px solid #fff;
+      padding: 15px;
+    }
+    th {
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    td {
+      text-align: center;
+    }
+    /* Оформление галочек и крестиков */
+    td:has(> .check) {
+      color: #fc0000;
+    }
+    td:has(> .cross) {
+      color: #3fb24f;
+    }
+    /* Адаптивные стили для мобильных устройств */
     @media (max-width: 768px) {
       .hero {
         flex-direction: column;
@@ -250,6 +307,7 @@
   <header>
     <h1>Агентство "НейроВнедрение"</h1>
   </header>
+  <!-- Hero секция -->
   <section class="hero">
     <div class="hero-content">
       <h1>НЕЙРОВНЕДРЕНИЕ</h1>
@@ -264,6 +322,7 @@
       <img src="assets/1.png" alt="Персонаж">
     </div>
   </section>
+  <!-- Секция "О компании" -->
   <section class="about scroll-animate">
     <h2>НЕЙРОВНЕДРЕНИЕ ОТ ПРАКТИКОВ, А НЕ ТЕОРЕТИКОВ</h2>
     <h3>основатели агентства <strong>"НейроВнедрение"</strong></h3>
@@ -287,10 +346,11 @@
       <p>Мы создали эту программу, чтобы вы получили реальную отдачу от ИИ уже с первых дней. Минимум ручной работы, максимум результата.</p>
     </div>
   </section>
+  <!-- Секция "Преимущества" -->
   <section class="benefits scroll-animate">
     <div class="benefits-container scroll-animate">
       <div class="benefits-image scroll-animate">
-        <img src="assets/часы.png" alt="Часы и иконки ИИ">
+        <img class="uniform" src="assets/часы.png" alt="Часы и иконки ИИ">
       </div>
       <div class="benefits-list scroll-animate">
         <div class="benefit-card scroll-animate">
@@ -308,10 +368,11 @@
       </div>
     </div>
   </section>
+  <!-- Секция "Бизнес-результаты" -->
   <section class="business-results scroll-animate">
     <div class="business-container scroll-animate">
       <div class="business-image scroll-animate">
-        <img src="assets/мир.png" alt="Глобус и геометки">
+        <img class="uniform" src="assets/мир.png" alt="Глобус и геометки">
       </div>
       <div class="business-list scroll-animate">
         <div class="business-card scroll-animate">
@@ -329,9 +390,10 @@
       </div>
     </div>
   </section>
+  <!-- Flex-секция с изображением слева -->
   <section class="flex-section scroll-animate">
     <div class="image-left scroll-animate">
-      <img src="assets/бот1.png" alt="бот1">
+      <img class="uniform" src="assets/бот1.png" alt="бот1">
     </div>
     <div class="text-block scroll-animate">
       <div class="text-card scroll-animate">
@@ -348,9 +410,10 @@
       </div>
     </div>
   </section>
+  <!-- Flex-секция с изображением справа -->
   <section class="flex-section scroll-animate">
     <div class="image-right scroll-animate">
-      <img src="assets/бот2.png" alt="бот2">
+      <img class="uniform" src="assets/бот2.png" alt="бот2">
     </div>
     <div class="text-block scroll-animate">
       <div class="text-card scroll-animate">
@@ -363,13 +426,14 @@
         • Получите 3-5 уникальных GPT-ассистентов (тренер по продажам, маркетолог, аналитик, контент-менеджер).
       </div>
       <div class="text-card scroll-animate">
-        • Научитесь создавать впечатляющие презентации, сайты и инфопродукты за считанные минуты в Gamma AI, Яркие презентации, лендинги и видео без усилий!
+        • Научитесь создавать впечатляющие презентации, сайты и инфопродукты за считанные минуты в Gamma AI, яркие презентации, лендинги и видео без усилий!
       </div>
     </div>
   </section>
+  <!-- Flex-секция с изображением слева -->
   <section class="flex-section scroll-animate">
     <div class="image-left scroll-animate">
-      <img src="assets/ассистент.png" alt="ассистент">
+      <img class="uniform" src="assets/ассистент.png" alt="ассистент">
     </div>
     <div class="text-block scroll-animate">
       <div class="text-card scroll-animate">
@@ -382,14 +446,15 @@
         • Запустите собственный чат-бот с помощью BotFather в Telegram.
       </div>
       <div class="text-card scroll-animate">
-        • Научитесь создавать, и развивать свой канал или сообщество в Telegram с нейро-админами и нейро-модераторами.
+        • Научитесь создавать и развивать свой канал или сообщество в Telegram с нейро-админами и нейро-модераторами.
       </div>
     </div>
   </section>
+  <!-- Flex-секция с изображением справа и заголовком -->
   <section class="flex-section scroll-animate reduced-gap">
     <div class="image-right scroll-animate">
       <h1>НЕЙРОВНЕДРЕНИЕ +</h1>
-      <img src="assets/ассистент2.png" alt="ассистент2">
+      <img class="uniform" src="assets/ассистент2.png" alt="ассистент2">
     </div>
     <div class="text-block scroll-animate">
       <div class="text-card scroll-animate">
@@ -404,9 +469,10 @@
       </div>
     </div>
   </section>
+  <!-- Flex-секция с изображением слева -->
   <section class="flex-section scroll-animate reduced-gap">
     <div class="image-left scroll-animate">
-      <img src="assets/касание.png" alt="касание">
+      <img class="uniform" src="assets/касание.png" alt="касание">
     </div>
     <div class="text-block scroll-animate">
       <div class="text-card scroll-animate">
@@ -415,175 +481,125 @@
         – для генерации видео с цифровым аватаром, полностью готового к публикации.
       </div>
       <div class="text-card scroll-animate">
-        • Персональная онлайн консультация (2 часа).
+        • Персональная онлайн-консультация (2 часа).
       </div>
     </div>
   </section>
-<!-- СЕКЦИЯ ТАРИФОВ -->
-<section class="pricing scroll-animate">
-  <h2>ТАРИФЫ</h2>
-  <div class="table-container">
-    <table>
-      <thead>
-        <tr>
-          <!-- Первый ряд заголовков -->
-          <th rowspan="2">Вариант участия</th>
-          <th colspan="2">Мини-группа</th>
-          <th colspan="2">Корпоративный формат</th>
-        </tr>
-        <tr>
-          <!-- Второй ряд заголовков -->
-          <th>НейроВнедрение</th>
-          <th>НейроВнедрение +</th>
-          <th>НейроВнедрение</th>
-          <th>НейроВнедрение +</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- Пример строк таблицы (дополните своими пунктами и “галочками”) -->
-        <tr>
-          <td>Автоматизация рутинных задач</td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td>Создание нейросотрудников</td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td>3 GPT-ассистента</td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td>Дополнительные ассистенты под задачу</td>
-         <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td>Голосовой Telegram-бот</td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td>Telegram-бот с бизнес-моделью</td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          
-        </tr>
-        <tr>
-          <td>Кастомные сценарии автоматизации в MAKE</td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td>Сценарии автоматизации в MAKE (2 шт.)</td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td>Персональная онлайн-консультация (2 ч)</td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-          <td><span class="check">&#10008;</span></td>
-          <td><span class="cross">&#10004;</span></td>
-        </tr>
-        <!-- Пример строки со стоимостью -->
-        <tr>
-          <td><strong>СТОИМОСТЬ ($)</strong></td>
-          <td>2 000</td>
-          <td>4 000</td>
-          <td>6 000</td>
-          <td>8 000</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</section>
-
-<!-- Стили для таблицы с тарифами -->
-<style>
-.pricing {
-  padding: 40px 20px;
-  text-align: center;
-  /* Пример заливки фона (меняйте под свой дизайн) */
-  /* background: linear-gradient(135deg, #4A00E0, #8E2DE2);
-  color: #fff;
-  /* При желании можете добавить анимацию-скролл (scroll-animate) */
-}
-.pricing h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-.table-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  overflow-x: auto; /* Для прокрутки на мобильных, если таблица слишком широкая */
-}
-table {
-  width: 100%;
-  border-collapse: collapse;
-  color: #fff;
-  font-size: 1rem;
-}
-thead {
-  background: rgba(255,255,255,0.1);
-}
-th, td {
-  border: 1px solid #fff;
-  padding: 15px;
-}
-th {
-  text-transform: uppercase;
-  font-weight: 600;
-}
-td {
-  text-align: center;
-}
-/* Пример оформления для «галочек» и «крестиков» */
-td:has(> .check) {
-  color: #fc0000;
-}
-td:has(> .cross) {
-  color: #3fb24f;
-}
-</style>
-
-  
+  <!-- Секция тарифов -->
+  <section class="pricing scroll-animate">
+    <h2>ТАРИФЫ</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Вариант участия</th>
+            <th colspan="2">Мини-группа</th>
+            <th colspan="2">Корпоративный формат</th>
+          </tr>
+          <tr>
+            <th>НейроВнедрение</th>
+            <th>НейроВнедрение +</th>
+            <th>НейроВнедрение</th>
+            <th>НейроВнедрение +</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Автоматизация рутинных задач</td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Создание нейросотрудников</td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>3 GPT-ассистента</td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Дополнительные ассистенты под задачу</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Голосовой Telegram-бот</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Telegram-бот с бизнес-моделью</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Кастомные сценарии автоматизации в MAKE</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Сценарии автоматизации в MAKE (2 шт.)</td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Персональная онлайн-консультация (2 ч)</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td><strong>СТОИМОСТЬ ($)</strong></td>
+            <td>2 000</td>
+            <td>4 000</td>
+            <td>6 000</td>
+            <td>8 000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <!-- Подвал -->
   <footer>
     <p>© 2025 Агентство "НейроВнедрение"</p>
   </footer>
-  <!-- Скрипт для запуска анимации при появлении элементов в зоне видимости -->
+  <!-- Скрипт анимации появления элементов при скролле -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       const scrollElements = document.querySelectorAll('.scroll-animate');
+      
       function elementInView(el, dividend = 1.25) {
         const elementTop = el.getBoundingClientRect().top;
-        return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
+        return elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend;
       }
+      
       function displayScrollElement(element) {
         element.style.animationPlayState = 'running';
       }
+      
       function hideScrollElement(element) {
         element.style.animationPlayState = 'paused';
       }
+      
       function handleScrollAnimation() {
         scrollElements.forEach(function(el) {
           if (elementInView(el)) {
@@ -593,8 +609,10 @@ td:has(> .cross) {
           }
         });
       }
+      
       window.addEventListener('scroll', handleScrollAnimation);
-      // Инициализация для элементов, уже видимых на экране
+      
+      // Запуск анимации для уже видимых элементов
       handleScrollAnimation();
     });
   </script>
