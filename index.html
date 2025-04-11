@@ -1,1 +1,454 @@
-<html lang="ru"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <title>НейроВнедрение</title> <style> * { margin: 0; padding: 0; box-sizing: border-box; } body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-image: url('assets/фон1.png'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center; color: #ffffff; } header { padding: 20px; text-align: center; } header h1 { font-size: 2em; color: #ffffff; } .hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 60px 80px; } .hero-content { max-width: 50%; z-index: 2; } .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; } .hero p { font-size: 1.6rem; line-height: 1.5; margin-bottom: 20px; } .agency { font-size: 1.1rem; opacity: 0.85; font-weight: 500; } .hero-image { max-width: 45%; } .hero-image img { width: 100%; height: auto; } /* Общие отступы для секций (кроме hero) */ .about, .benefits, .business-results, .flex-section, .centered-image { padding: 40px 20px; } .about { text-align: center; } .founders { display: flex; justify-content: space-around; align-items: flex-start; flex-wrap: wrap; gap: 60px; margin-bottom: 40px; position: relative; } .founder { max-width: 300px; text-align: center; } .founder img { border-radius: 50%; width: 200px; height: 200px; object-fit: cover; margin-bottom: 15px; } .founder h4 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; } .founder p { font-size: 1rem; line-height: 1.4; } .lamp-wrapper { position: relative; top: 60px; } .lamp-wrapper img { width: 90px; } .quote { position: relative; margin-top: 50px; max-width: 900px; margin: 0 auto; font-size: 1.2rem; line-height: 1.5; padding-left: 60px; text-align: left; } .quote-icon { position: absolute; top: -10px; left: 0; width: 40px; height: auto; } .benefits-container, .business-container { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; } .benefits-image, .business-image { flex: 1 1 40%; text-align: center; } .benefits-image img, .business-image img { max-width: 100%; height: auto; } .benefits-list, .business-list { flex: 1 1 55%; display: flex; flex-direction: column; gap: 20px; } .benefit-card, .business-card { border: 1px solid #ffffff; border-radius: 12px; padding: 20px; font-size: 1.1rem; line-height: 1.5; background: rgba(255,255,255,0.05); backdrop-filter: blur(4px); } .flex-section { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; } .image-left, .image-right { flex: 1 1 40%; text-align: center; } .text-block { flex: 1 1 55%; display: flex; flex-direction: column; gap: 20px; } .text-card { background: rgba(255,255,255,0.05); padding: 15px; border: 1px solid #ffffff; border-radius: 8px; font-size: 1.1rem; line-height: 1.5; } /* Исправление для заголовка с ассистентом2: предотвращаем перенос «+» и уменьшаем отступ */ .flex-section .image-right h1 { white-space: nowrap; margin-bottom: 10px; font-size: 3rem; text-align: center; } /* Новый стиль для секций с уменьшенными отступами */ .reduced-gap { padding: 20px 20px; } footer { text-align: center; padding: 20px; background-color: rgba(0,0,0,0.7); color: #ccc; } @keyframes floatIn { 0% { transform: translateY(40px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } } /* По умолчанию элементы с анимацией при скролле - на паузе */ .scroll-animate { animation: floatIn 2s ease-out forwards; animation-play-state: paused; } /* Медиа-запрос для адаптации блока hero на мобильных устройствах */ @media (max-width: 768px) { .hero { flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; } .hero-content { max-width: 100%; } .hero-image { max-width: 80%; margin-top: 20px; } .hero h1 { font-size: 2.5rem; margin-bottom: 15px; } .hero p { font-size: 1.2rem; margin-bottom: 15px; } } </style> </head> <body> <header> <h1>Агентство "НейроВнедрение"</h1> </header> <section class="hero"> <div class="hero-content"> <h1>НЕЙРОВНЕДРЕНИЕ</h1> <p>С ПРОФЕССИОНАЛЬНЫМ<br>СОПРОВОЖДЕНИЕМ<br>"ПОД КЛЮЧ"</p> <span class="agency">АГЕНТСТВО “НейроВнедрение”</span> </div> <div class="hero-image"> <img src="assets/1.png" alt="Персонаж"> </div> </section> <section class="about scroll-animate"> <h2>НЕЙРОВНЕДРЕНИЕ ОТ ПРАКТИКОВ, А НЕ ТЕОРЕТИКОВ</h2> <h3>основатели агентства <strong>"НейроВнедрение"</strong></h3> <div class="founders scroll-animate"> <div class="founder scroll-animate"> <img src="assets/alex.jpg" alt="Алексей Велчев"> <h4>АЛЕКСЕЙ ВЕЛЧЕВ</h4> <p>эксперт по нейросетям, цифровым технологиям и AI-монетизации, создатель успешного онлайн-сообщества</p> </div> <div class="lamp-wrapper scroll-animate"> <img src="assets/лампочка.png" alt="AI лампочка"> </div> <div class="founder scroll-animate"> <img src="assets/yliya.jpg" alt="Юлия Михайлова"> <h4>ЮЛИЯ МИХАЙЛОВА</h4> <p>эксперт по AI-автоматизации, чат-ботам и внедрению AI-решений в бизнес, автор книг о нейросетях</p> </div> </div> <div class="quote scroll-animate"> <img class="quote-icon" src="assets/кавычки.png" alt="кавычки"> <p>Мы создали эту программу, чтобы вы получили реальную отдачу от ИИ уже с первых дней. Минимум ручной работы, максимум результата.</p> </div> </section> <section class="benefits scroll-animate"> <div class="benefits-container scroll-animate"> <div class="benefits-image scroll-animate"> <img src="assets/часы.png" alt="Часы и иконки ИИ"> </div> <div class="benefits-list scroll-animate"> <div class="benefit-card scroll-animate">• Полностью автоматизировать все рутинные задачи без помощи программистов</div> <div class="benefit-card scroll-animate">• Самостоятельно создавать профессиональный контент на основе передовых ИИ-технологий</div> <div class="benefit-card scroll-animate">• Значительно повысить узнаваемость своего бренда и личного бренда</div> <div class="benefit-card scroll-animate">• Высвободите ценное время и ресурсы, которые сможете направить на рост вашего бизнеса и достижение новых целей</div> </div> </div> </section> <section class="business-results scroll-animate"> <div class="business-container scroll-animate"> <div class="business-image scroll-animate"> <img src="assets/мир.png" alt="Глобус и геометки"> </div> <div class="business-list scroll-animate"> <div class="business-card scroll-animate">• Радикально снизить затраты из-за отсутствия необходимости оплачивать работу массе сотрудников и фрилансерам</div> <div class="business-card scroll-animate">• Увеличить заработок и доход</div> <div class="business-card scroll-animate">• Получите возможность масштабировать свои процессы и бизнес</div> <div class="business-card scroll-animate">• Сможете выйти на иностранные рынки с минимальными затратами и максимальной эффективностью</div> </div> </div> </section> <section class="flex-section scroll-animate"> <div class="image-left scroll-animate"> <img src="assets/бот1.png" alt="бот1"> </div> <div class="text-block scroll-animate"> <div class="text-card scroll-animate">• Создайте автопривлечение новых клиентов без лишних затрат.</div> <div class="text-card scroll-animate">• Эффективная работа нейросотрудников 24/7/365 без зарплат.</div> <div class="text-card scroll-animate">• Умные ИИ-чат-боты для воронок продаж.</div> <div class="text-card scroll-animate">• Собственный GPT-ассистент на базе OpenAI.</div> </div> </section> <section class="flex-section scroll-animate"> <div class="image-right scroll-animate"> <img src="assets/бот2.png" alt="бот2"> </div> <div class="text-block scroll-animate"> <div class="text-card scroll-animate">• Освоите искусство эффективного промптинга для максимальной пользы от ИИ.</div> <div class="text-card scroll-animate">• Узнаете профессиональные секреты и лайфхаки работы с ChatGPT.</div> <div class="text-card scroll-animate">• Получите 3-5 уникальных GPT-ассистентов (тренер по продажам, маркетолог, аналитик, контент-менеджер).</div> <div class="text-card scroll-animate">• Научитесь создавать впечатляющие презентации, сайты и инфопродукты за считанные минуты в Gamma AI, Яркие презентации, лендинги и видео без усилий!</div> </div> </section> <section class="flex-section scroll-animate"> <div class="image-left scroll-animate"> <img src="assets/ассистент.png" alt="ассистент"> </div> <div class="text-block scroll-animate"> <div class="text-card scroll-animate">• Овладеете созданием профессиональных видеороликов (рилсы, shorts) с автоматическим монтажом в InVideo.</div> <div class="text-card scroll-animate">• Создадите уникальный цифровой аватар в HeyGen и начнёте генерировать видео-контент уже в первый день обучения.</div> <div class="text-card scroll-animate">• Запустите собственный чат-бот с помощью BotFather в Telegram.</div> <div class="text-card scroll-animate">• Научитесь создавать, и развивать свой канал или сообщество в Telegram с нейро-админами и нейро-модераторами.</div> </div> </section> <section class="flex-section scroll-animate reduced-gap"> <div class="image-right scroll-animate"> <h1>НЕЙРОВНЕДРЕНИЕ +</h1> <img src="assets/ассистент2.png" alt="ассистент2"> </div> <div class="text-block scroll-animate"> <div class="text-card scroll-animate">• Станете обладателем целой команды кастомных нейросодрудников, разработанных под задачи вашего бизнеса.</div> <div class="text-card scroll-animate">• Освойте создание продвинутого голосового Telegram-бота, с возможностью проводить презентации продукта или услуги, вести диалог, отвечать на вопросы и вести клиента по воронке.</div> <div class="text-card scroll-animate">• Запустите Telegram-бота с встроенной бизнес-моделью — он не просто отвечает, а автоматически продаёт, прогревает и удерживает клиентов. Работает на платной подписке в Telegram.</div> </div> </section> <section class="flex-section scroll-animate reduced-gap"> <div class="image-left scroll-animate"> <img src="assets/касание.png" alt="касание"> </div> <div class="text-block scroll-animate"> <div class="text-card scroll-animate"> • Внедрите продвинутые сценарии из профессиональных кастомных шаблонов автоматизации в MAKE (блюпринты):<br> – для автопостинга с 5–6 иллюстрациями в одном посте (Telegram, Instagram, Facebook, Threads),<br> – для генерации видео с цифровым аватаром, полностью готового к публикации. </div> <div class="text-card scroll-animate">• Персональная онлайн консультация (2 часа).</div> </div> </section> <footer> <p>© 2025 Агентство "НейроВнедрение"</p> </footer> <!-- Скрипт для запуска анимации при появлении элементов в зоне видимости --> <script> document.addEventListener('DOMContentLoaded', function() { const scrollElements = document.querySelectorAll('.scroll-animate'); function elementInView(el, dividend = 1.25) { const elementTop = el.getBoundingClientRect().top; return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend); } function displayScrollElement(element) { element.style.animationPlayState = 'running'; } function hideScrollElement(element) { element.style.animationPlayState = 'paused'; } function handleScrollAnimation() { scrollElements.forEach(function(el) { if (elementInView(el)) { displayScrollElement(el); } else { hideScrollElement(el); } }); } window.addEventListener('scroll', handleScrollAnimation); // Инициализация для элементов, уже видимых на экране handleScrollAnimation(); }); </script> </body> </html>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>НейроВнедрение</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('assets/фон1.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: #ffffff;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2em;
+      color: #ffffff;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 60px 80px;
+    }
+    .hero-content {
+      max-width: 50%;
+      z-index: 2;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+    .agency {
+      font-size: 1.1rem;
+      opacity: 0.85;
+      font-weight: 500;
+    }
+    .hero-image {
+      max-width: 45%;
+    }
+    .hero-image img {
+      width: 100%;
+      height: auto;
+    }
+    /* Общие отступы для секций (кроме hero) */
+    .about, 
+    .benefits, 
+    .business-results, 
+    .flex-section, 
+    .centered-image {
+      padding: 40px 20px;
+    }
+    .about {
+      text-align: center;
+    }
+    .founders {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    .founder {
+      max-width: 300px;
+      text-align: center;
+    }
+    .founder img {
+      border-radius: 50%;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .founder h4 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    .founder p {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    .lamp-wrapper {
+      position: relative;
+      top: 60px;
+    }
+    .lamp-wrapper img {
+      width: 90px;
+    }
+    .quote {
+      position: relative;
+      margin-top: 50px;
+      max-width: 900px;
+      margin: 0 auto;
+      font-size: 1.2rem;
+      line-height: 1.5;
+      padding-left: 60px;
+      text-align: left;
+    }
+    .quote-icon {
+      position: absolute;
+      top: -10px;
+      left: 0;
+      width: 40px;
+      height: auto;
+    }
+    .benefits-container, 
+    .business-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .benefits-image, 
+    .business-image {
+      flex: 1 1 40%;
+      text-align: center;
+    }
+    .benefits-image img, 
+    .business-image img {
+      max-width: 100%;
+      height: auto;
+    }
+    .benefits-list, 
+    .business-list {
+      flex: 1 1 55%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .benefit-card, 
+    .business-card {
+      border: 1px solid #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(4px);
+    }
+    .flex-section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .image-left, 
+    .image-right {
+      flex: 1 1 40%;
+      text-align: center;
+    }
+    .text-block {
+      flex: 1 1 55%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .text-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    /* Исправление для заголовка с ассистентом2:
+       предотвращаем перенос «+» и уменьшаем отступ */
+    .flex-section .image-right h1 {
+      white-space: nowrap;
+      margin-bottom: 10px;
+      font-size: 3rem;
+      text-align: center;
+    }
+    /* Новый стиль для секций с уменьшенными отступами */
+    .reduced-gap {
+      padding: 20px 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #ccc;
+    }
+    @keyframes floatIn {
+      0% {
+        transform: translateY(40px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+    /* По умолчанию элементы с анимацией при скролле на паузе */
+    .scroll-animate {
+      animation: floatIn 2s ease-out forwards;
+      animation-play-state: paused;
+    }
+    /* Медиа-запрос для адаптации блока hero на мобильных устройствах */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        text-align: center;
+      }
+      .hero-content {
+        max-width: 100%;
+      }
+      .hero-image {
+        max-width: 80%;
+        margin-top: 20px;
+      }
+      .hero h1 {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+      }
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Агентство "НейроВнедрение"</h1>
+  </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>НЕЙРОВНЕДРЕНИЕ</h1>
+      <p>
+        С ПРОФЕССИОНАЛЬНЫМ<br>
+        СОПРОВОЖДЕНИЕМ<br>
+        "ПОД КЛЮЧ"
+      </p>
+      <span class="agency">АГЕНТСТВО “НейроВнедрение”</span>
+    </div>
+    <div class="hero-image">
+      <img src="assets/1.png" alt="Персонаж">
+    </div>
+  </section>
+  <section class="about scroll-animate">
+    <h2>НЕЙРОВНЕДРЕНИЕ ОТ ПРАКТИКОВ, А НЕ ТЕОРЕТИКОВ</h2>
+    <h3>основатели агентства <strong>"НейроВнедрение"</strong></h3>
+    <div class="founders scroll-animate">
+      <div class="founder scroll-animate">
+        <img src="assets/alex.jpg" alt="Алексей Велчев">
+        <h4>АЛЕКСЕЙ ВЕЛЧЕВ</h4>
+        <p>эксперт по нейросетям, цифровым технологиям и AI-монетизации, создатель успешного онлайн-сообщества</p>
+      </div>
+      <div class="lamp-wrapper scroll-animate">
+        <img src="assets/лампочка.png" alt="AI лампочка">
+      </div>
+      <div class="founder scroll-animate">
+        <img src="assets/yliya.jpg" alt="Юлия Михайлова">
+        <h4>ЮЛИЯ МИХАЙЛОВА</h4>
+        <p>эксперт по AI-автоматизации, чат-ботам и внедрению AI-решений в бизнес, автор книг о нейросетях</p>
+      </div>
+    </div>
+    <div class="quote scroll-animate">
+      <img class="quote-icon" src="assets/кавычки.png" alt="кавычки">
+      <p>Мы создали эту программу, чтобы вы получили реальную отдачу от ИИ уже с первых дней. Минимум ручной работы, максимум результата.</p>
+    </div>
+  </section>
+  <section class="benefits scroll-animate">
+    <div class="benefits-container scroll-animate">
+      <div class="benefits-image scroll-animate">
+        <img src="assets/часы.png" alt="Часы и иконки ИИ">
+      </div>
+      <div class="benefits-list scroll-animate">
+        <div class="benefit-card scroll-animate">
+          • Полностью автоматизировать все рутинные задачи без помощи программистов
+        </div>
+        <div class="benefit-card scroll-animate">
+          • Самостоятельно создавать профессиональный контент на основе передовых ИИ-технологий
+        </div>
+        <div class="benefit-card scroll-animate">
+          • Значительно повысить узнаваемость своего бренда и личного бренда
+        </div>
+        <div class="benefit-card scroll-animate">
+          • Высвободите ценное время и ресурсы, которые сможете направить на рост вашего бизнеса и достижение новых целей
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="business-results scroll-animate">
+    <div class="business-container scroll-animate">
+      <div class="business-image scroll-animate">
+        <img src="assets/мир.png" alt="Глобус и геометки">
+      </div>
+      <div class="business-list scroll-animate">
+        <div class="business-card scroll-animate">
+          • Радикально снизить затраты из-за отсутствия необходимости оплачивать работу массе сотрудников и фрилансерам
+        </div>
+        <div class="business-card scroll-animate">
+          • Увеличить заработок и доход
+        </div>
+        <div class="business-card scroll-animate">
+          • Получите возможность масштабировать свои процессы и бизнес
+        </div>
+        <div class="business-card scroll-animate">
+          • Сможете выйти на иностранные рынки с минимальными затратами и максимальной эффективностью
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="flex-section scroll-animate">
+    <div class="image-left scroll-animate">
+      <img src="assets/бот1.png" alt="бот1">
+    </div>
+    <div class="text-block scroll-animate">
+      <div class="text-card scroll-animate">
+        • Создайте автопривлечение новых клиентов без лишних затрат.
+      </div>
+      <div class="text-card scroll-animate">
+        • Эффективная работа нейросотрудников 24/7/365 без зарплат.
+      </div>
+      <div class="text-card scroll-animate">
+        • Умные ИИ-чат-боты для воронок продаж.
+      </div>
+      <div class="text-card scroll-animate">
+        • Собственный GPT-ассистент на базе OpenAI.
+      </div>
+    </div>
+  </section>
+  <section class="flex-section scroll-animate">
+    <div class="image-right scroll-animate">
+      <img src="assets/бот2.png" alt="бот2">
+    </div>
+    <div class="text-block scroll-animate">
+      <div class="text-card scroll-animate">
+        • Освоите искусство эффективного промптинга для максимальной пользы от ИИ.
+      </div>
+      <div class="text-card scroll-animate">
+        • Узнаете профессиональные секреты и лайфхаки работы с ChatGPT.
+      </div>
+      <div class="text-card scroll-animate">
+        • Получите 3-5 уникальных GPT-ассистентов (тренер по продажам, маркетолог, аналитик, контент-менеджер).
+      </div>
+      <div class="text-card scroll-animate">
+        • Научитесь создавать впечатляющие презентации, сайты и инфопродукты за считанные минуты в Gamma AI, Яркие презентации, лендинги и видео без усилий!
+      </div>
+    </div>
+  </section>
+  <section class="flex-section scroll-animate">
+    <div class="image-left scroll-animate">
+      <img src="assets/ассистент.png" alt="ассистент">
+    </div>
+    <div class="text-block scroll-animate">
+      <div class="text-card scroll-animate">
+        • Овладеете созданием профессиональных видеороликов (рилсы, shorts) с автоматическим монтажом в InVideo.
+      </div>
+      <div class="text-card scroll-animate">
+        • Создадите уникальный цифровой аватар в HeyGen и начнёте генерировать видео-контент уже в первый день обучения.
+      </div>
+      <div class="text-card scroll-animate">
+        • Запустите собственный чат-бот с помощью BotFather в Telegram.
+      </div>
+      <div class="text-card scroll-animate">
+        • Научитесь создавать, и развивать свой канал или сообщество в Telegram с нейро-админами и нейро-модераторами.
+      </div>
+    </div>
+  </section>
+  <section class="flex-section scroll-animate reduced-gap">
+    <div class="image-right scroll-animate">
+      <h1>НЕЙРОВНЕДРЕНИЕ +</h1>
+      <img src="assets/ассистент2.png" alt="ассистент2">
+    </div>
+    <div class="text-block scroll-animate">
+      <div class="text-card scroll-animate">
+        • Станете обладателем целой команды кастомных нейросодрудников, разработанных под задачи вашего бизнеса.
+      </div>
+      <div class="text-card scroll-animate">
+        • Освойте создание продвинутого голосового Telegram-бота, с возможностью проводить презентации продукта или услуги, вести диалог, отвечать на вопросы и вести клиента по воронке.
+      </div>
+      <div class="text-card scroll-animate">
+        • Запустите Telegram-бота с встроенной бизнес-моделью — он не просто отвечает, а автоматически продаёт, прогревает и удерживает клиентов.
+        Работает на платной подписке в Telegram.
+      </div>
+    </div>
+  </section>
+  <section class="flex-section scroll-animate reduced-gap">
+    <div class="image-left scroll-animate">
+      <img src="assets/касание.png" alt="касание">
+    </div>
+    <div class="text-block scroll-animate">
+      <div class="text-card scroll-animate">
+        • Внедрите продвинутые сценарии из профессиональных кастомных шаблонов автоматизации в MAKE (блюпринты):<br>
+        – для автопостинга с 5–6 иллюстрациями в одном посте (Telegram, Instagram, Facebook, Threads),<br>
+        – для генерации видео с цифровым аватаром, полностью готового к публикации.
+      </div>
+      <div class="text-card scroll-animate">
+        • Персональная онлайн консультация (2 часа).
+      </div>
+    </div>
+  </section>
+  <footer>
+    <p>© 2025 Агентство "НейроВнедрение"</p>
+  </footer>
+  <!-- Скрипт для запуска анимации при появлении элементов в зоне видимости -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const scrollElements = document.querySelectorAll('.scroll-animate');
+      function elementInView(el, dividend = 1.25) {
+        const elementTop = el.getBoundingClientRect().top;
+        return (elementTop <= (window.innerHeight || document.documentElement.clientHeight) / dividend);
+      }
+      function displayScrollElement(element) {
+        element.style.animationPlayState = 'running';
+      }
+      function hideScrollElement(element) {
+        element.style.animationPlayState = 'paused';
+      }
+      function handleScrollAnimation() {
+        scrollElements.forEach(function(el) {
+          if (elementInView(el)) {
+            displayScrollElement(el);
+          } else {
+            hideScrollElement(el);
+          }
+        });
+      }
+      window.addEventListener('scroll', handleScrollAnimation);
+      // Инициализация для элементов, уже видимых на экране
+      handleScrollAnimation();
+    });
+  </script>
+</body>
+</html>
