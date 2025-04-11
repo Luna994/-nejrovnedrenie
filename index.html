@@ -419,6 +419,153 @@
       </div>
     </div>
   </section>
+<!-- СЕКЦИЯ ТАРИФОВ -->
+<section class="pricing scroll-animate">
+  <h2>ТАРИФЫ</h2>
+  <div class="table-container">
+    <table>
+      <thead>
+        <tr>
+          <!-- Первый ряд заголовков -->
+          <th rowspan="2">Вариант участия</th>
+          <th colspan="2">Мини-группа</th>
+          <th colspan="2">Корпоративный формат</th>
+        </tr>
+        <tr>
+          <!-- Второй ряд заголовков -->
+          <th>НейроВнедрение</th>
+          <th>НейроВнедрение +</th>
+          <th>НейроВнедрение</th>
+          <th>НейроВнедрение +</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Пример строк таблицы (дополните своими пунктами и “галочками”) -->
+        <tr>
+          <td>Автоматизация рутинных задач</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Создание нейросотрудников</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>3 GPT-ассистента</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Дополнительные ассистенты под задачу</td>
+          <td>✘</td>
+          <td>✔</td>
+          <td>✘</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Голосовой Telegram-бот</td>
+          <td>✘</td>
+          <td>✔</td>
+          <td>✘</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Telegram-бот с бизнес-моделью</td>
+          <td>✘</td>
+          <td>✔</td>
+          <td>✘</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Кастомные сценарии автоматизации в MAKE</td>
+          <td>✘</td>
+          <td>✔</td>
+          <td>✘</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Сценарии автоматизации в MAKE (2 шт.)</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <tr>
+          <td>Персональная онлайн-консультация (2 ч)</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+          <td>✔</td>
+        </tr>
+        <!-- Пример строки со стоимостью -->
+        <tr>
+          <td><strong>СТОИМОСТЬ (₽)</strong></td>
+          <td>2 000</td>
+          <td>4 000</td>
+          <td>6 000</td>
+          <td>8 000</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Стили для таблицы с тарифами -->
+<style>
+.pricing {
+  padding: 40px 20px;
+  text-align: center;
+  /* Пример заливки фона (меняйте под свой дизайн) */
+  background: linear-gradient(135deg, #4A00E0, #8E2DE2);
+  color: #fff;
+  /* При желании можете добавить анимацию-скролл (scroll-animate) */
+}
+.pricing h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+.table-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow-x: auto; /* Для прокрутки на мобильных, если таблица слишком широкая */
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+  font-size: 1rem;
+}
+thead {
+  background: rgba(255,255,255,0.1);
+}
+th, td {
+  border: 1px solid #fff;
+  padding: 15px;
+}
+th {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+td {
+  text-align: center;
+}
+/* Пример оформления для «галочек» и «крестиков» */
+td:has(> .check) {
+  color: #00ff00;
+}
+td:has(> .cross) {
+  color: #ff0000;
+}
+</style>
+
+  
   <footer>
     <p>© 2025 Агентство "НейроВнедрение"</p>
   </footer>
