@@ -5,256 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>НейроВнедрение</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-image: url('assets/фон1.png');
-      background-size: cover;
-      background-attachment: fixed;
-      background-repeat: no-repeat;
-      background-position: center;
-      color: #ffffff;
-    }
-    header {
-      background-color: rgba(0, 0, 102, 1);
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2em;
-      color: #ffffff;
-      animation: floatIn 2s ease-out forwards;
-    }
-    <style>
-  /* Стили для desktop остаются без изменений */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 80px;
-  }
-  .hero-content {
-    max-width: 50%;
-    z-index: 2;
-  }
-  .hero h1 {
-    font-size: 3rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-  }
-  .hero p {
-    font-size: 1.6rem;
-    line-height: 1.5;
-    margin-bottom: 20px;
-  }
-  .hero-image {
-    max-width: 45%;
-  }
-  .hero-image img {
-    width: 100%;
-    height: auto;
-  }
-
-  /* Медиа-запрос для мобильных устройств */
-  @media (max-width: 768px) {
-    .hero {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      text-align: center;
-    }
-    .hero-content {
-      max-width: 100%;
-    }
-    .hero-image {
-      max-width: 80%;
-      margin-top: 20px;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      line-height: 1.4;
-      margin-bottom: 15px;
-    }
-  }
-</style>
-
-</style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-image: url('assets/фон1.png'); background-size: cover; background-attachment: fixed; background-repeat: no-repeat; background-position: center; color: #ffffff; }
+    header { background-color: rgba(0, 0, 0, 0.7); padding: 20px; text-align: center; }
+    header h1 { font-size: 2em; color: #ffffff; animation: floatIn 2s ease-out forwards; }
+    .hero { min-height: 100vh; display: flex; align-items: center; justify-content: space-between; padding: 60px 80px; }
+    .hero-content { max-width: 50%; z-index: 2; }
+    .hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; animation: floatIn 2s ease-out forwards; }
+    .hero p { font-size: 1.6rem; line-height: 1.5; margin-bottom: 20px; animation: floatIn 2s ease-out forwards; }
+    .agency { font-size: 1.1rem; opacity: 0.85; font-weight: 500; animation: floatIn 2s ease-out forwards; }
+    .hero-image { max-width: 45%; }
+    .hero-image img { width: 100%; height: auto; animation: floatIn 2s ease-out forwards; }
     /* Общие отступы для секций (кроме hero) */
-    .about,
-    .benefits,
-    .business-results,
-    .flex-section,
-    .centered-image {
-      padding: 40px 20px;
-    }
-    .about {
-      text-align: center;
-    }
-    .founders {
-      display: flex;
-      justify-content: space-around;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 60px;
-      margin-bottom: 40px;
-      position: relative;
-    }
-    .founder {
-      max-width: 300px;
-      text-align: center;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .founder img {
-      border-radius: 50%;
-      width: 200px;
-      height: 200px;
-      object-fit: cover;
-      margin-bottom: 15px;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .founder h4 {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 10px;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .founder p {
-      font-size: 1rem;
-      line-height: 1.4;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .lamp-wrapper {
-      position: relative;
-      top: 60px;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .lamp-wrapper img {
-      width: 90px;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .quote {
-      position: relative;
-      margin-top: 50px;
-      max-width: 900px;
-      margin: 0 auto;
-      font-size: 1.2rem;
-      line-height: 1.5;
-      padding-left: 60px;
-      text-align: left;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .quote-icon {
-      position: absolute;
-      top: -10px;
-      left: 0;
-      width: 40px;
-      height: auto;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .benefits-container,
-    .business-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .benefits-image,
-    .business-image {
-      flex: 1 1 40%;
-      text-align: center;
-    }
-    .benefits-image img,
-    .business-image img {
-      max-width: 100%;
-      height: auto;
-      animation: floatIn 2s ease-out forwards;
-    }
-    .benefits-list,
-    .business-list {
-      flex: 1 1 55%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .benefit-card,
-    .business-card {
-      border: 1px solid #ffffff;
-      border-radius: 12px;
-      padding: 20px;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(4px);
-      animation: floatIn 2s ease-out forwards;
-    }
-    .flex-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-    }
-    .image-left,
-    .image-right {
-      flex: 1 1 40%;
-      text-align: center;
-    }
-    .text-block {
-      flex: 1 1 55%;
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .text-card {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 15px;
-      border: 1px solid #ffffff;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      animation: floatIn 2s ease-out forwards;
-    }
-    /* Заголовок секции "НЕЙРОВНЕДРЕНИЕ +" */
-    .flex-section .image-right h1 {
-      width: 100%;
-      text-align: center;
-      font-size: 3rem;
-      margin-bottom: 20px;
-      animation: floatIn 2s ease-out forwards;
-    }
-    /* Новый стиль для двух последних секций */
-    .reduced-gap {
-      padding: 20px 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: rgba(0, 0, 0, 0.7);
-      color: #ccc;
-      animation: floatIn 2s ease-out forwards;
-    }
-    /* Ключевая анимация для всех элементов */
-    @keyframes floatIn {
-      0% {
-        transform: translateY(40px);
-        opacity: 0;
-      }
-      100% {
-        transform: translateY(0);
-        opacity: 1;
-      }
+    .about, .benefits, .business-results, .flex-section, .centered-image { padding: 40px 20px; }
+    .about { text-align: center; }
+    .founders { display: flex; justify-content: space-around; align-items: flex-start; flex-wrap: wrap; gap: 60px; margin-bottom: 40px; position: relative; }
+    .founder { max-width: 300px; text-align: center; animation: floatIn 2s ease-out forwards; }
+    .founder img { border-radius: 50%; width: 200px; height: 200px; object-fit: cover; margin-bottom: 15px; animation: floatIn 2s ease-out forwards; }
+    .founder h4 { font-size: 1.2rem; font-weight: bold; margin-bottom: 10px; animation: floatIn 2s ease-out forwards; }
+    .founder p { font-size: 1rem; line-height: 1.4; animation: floatIn 2s ease-out forwards; }
+    .lamp-wrapper { position: relative; top: 60px; animation: floatIn 2s ease-out forwards; }
+    .lamp-wrapper img { width: 90px; animation: floatIn 2s ease-out forwards; }
+    .quote { position: relative; margin-top: 50px; max-width: 900px; margin: 0 auto; font-size: 1.2rem; line-height: 1.5; padding-left: 60px; text-align: left; animation: floatIn 2s ease-out forwards; }
+    .quote-icon { position: absolute; top: -10px; left: 0; width: 40px; height: auto; animation: floatIn 2s ease-out forwards; }
+    .benefits-container, .business-container { display: flex; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-between; max-width: 1200px; margin: 0 auto; }
+    .benefits-image, .business-image { flex: 1 1 40%; text-align: center; }
+    .benefits-image img, .business-image img { max-width: 100%; height: auto; animation: floatIn 2s ease-out forwards; }
+    .benefits-list, .business-list { flex: 1 1 55%; display: flex; flex-direction: column; gap: 20px; }
+    .benefit-card, .business-card { border: 1px solid #ffffff; border-radius: 12px; padding: 20px; font-size: 1.1rem; line-height: 1.5; background: rgba(255,255,255,0.05); backdrop-filter: blur(4px); animation: floatIn 2s ease-out forwards; }
+    .flex-section { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+    .image-left, .image-right { flex: 1 1 40%; text-align: center; }
+    .text-block { flex: 1 1 55%; display: flex; flex-direction: column; gap: 20px; }
+    .text-card { background: rgba(255,255,255,0.05); padding: 15px; border: 1px solid #ffffff; border-radius: 8px; font-size: 1.1rem; line-height: 1.5; animation: floatIn 2s ease-out forwards; }
+    .flex-section .image-right h1 { width: 100%; text-align: center; font-size: 3rem; margin-bottom: 20px; animation: floatIn 2s ease-out forwards; }
+    /* Новый стиль для последних двух секций с уменьшенными отступами */
+    .reduced-gap { padding: 20px 20px; }
+    footer { text-align: center; padding: 20px; background-color: rgba(0,0,0,0.7); color: #ccc; animation: floatIn 2s ease-out forwards; }
+    @keyframes floatIn { 0% { transform: translateY(40px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+    /* Медиа-запрос для адаптации блока hero на мобильных устройствах */
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; }
+      .hero-content { max-width: 100%; }
+      .hero-image { max-width: 80%; margin-top: 20px; }
+      .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+      .hero p { font-size: 1.2rem; margin-bottom: 15px; }
     }
   </style>
 </head>
@@ -262,7 +56,6 @@
   <header>
     <h1>Агентство "НейроВнедрение"</h1>
   </header>
-
   <section class="hero">
     <div class="hero-content">
       <h1>НЕЙРОВНЕДРЕНИЕ</h1>
@@ -273,7 +66,6 @@
       <img src="assets/1.png" alt="Персонаж">
     </div>
   </section>
-
   <section class="about scroll-animate">
     <h2>НЕЙРОВНЕДРЕНИЕ ОТ ПРАКТИКОВ, А НЕ ТЕОРЕТИКОВ</h2>
     <h3>основатели агентства <strong>"НейроВнедрение"</strong></h3>
@@ -297,7 +89,6 @@
       <p>Мы создали эту программу, чтобы вы получили реальную отдачу от ИИ уже с первых дней. Минимум ручной работы, максимум результата.</p>
     </div>
   </section>
-
   <section class="benefits scroll-animate">
     <div class="benefits-container scroll-animate">
       <div class="benefits-image scroll-animate">
@@ -311,7 +102,6 @@
       </div>
     </div>
   </section>
-
   <section class="business-results scroll-animate">
     <div class="business-container scroll-animate">
       <div class="business-image scroll-animate">
@@ -325,7 +115,6 @@
       </div>
     </div>
   </section>
-
   <section class="flex-section scroll-animate">
     <div class="image-left scroll-animate">
       <img src="assets/бот1.png" alt="бот1">
@@ -337,7 +126,6 @@
       <div class="text-card scroll-animate">• Собственный GPT-ассистент на базе OpenAI.</div>
     </div>
   </section>
-
   <section class="flex-section scroll-animate">
     <div class="image-right scroll-animate">
       <img src="assets/бот2.png" alt="бот2">
@@ -349,7 +137,6 @@
       <div class="text-card scroll-animate">• Научитесь создавать впечатляющие презентации, сайты и инфопродукты за считанные минуты в Gamma AI, Яркие презентации, лендинги и видео без усилий!</div>
     </div>
   </section>
-
   <section class="flex-section scroll-animate">
     <div class="image-left scroll-animate">
       <img src="assets/ассистент.png" alt="ассистент">
@@ -361,7 +148,6 @@
       <div class="text-card scroll-animate">• Научитесь создавать, и развивать свой канал или сообщество в Telegram с нейро-админами и нейро-модераторами.</div>
     </div>
   </section>
-
   <section class="flex-section scroll-animate">
     <div class="image-right scroll-animate">
       <img src="assets/бот3.png" alt="бот3">
@@ -373,8 +159,6 @@
       <div class="text-card scroll-animate">• Получите готового GPT-ассистента, который станет вашим незаменимым нейро-сотрудником!</div>
     </div>
   </section>
-
-  <!-- Последние две секции с уменьшенными отступами -->
   <section class="flex-section scroll-animate reduced-gap">
     <div class="image-right scroll-animate">
       <h1>НЕЙРОВНЕДРЕНИЕ +</h1>
@@ -386,7 +170,6 @@
       <div class="text-card scroll-animate">• Запустите Telegram-бота с встроенной бизнес-моделью — он не просто отвечает, а автоматически продаёт, прогревает и удерживает клиентов. Работает на платной подписке в Telegram.</div>
     </div>
   </section>
-
   <section class="flex-section scroll-animate reduced-gap">
     <div class="image-left scroll-animate">
       <img src="assets/касание.png" alt="касание">
@@ -400,7 +183,6 @@
       <div class="text-card scroll-animate">• Персональная онлайн консультация (2 часа).</div>
     </div>
   </section>
-
   <footer>
     <p>© 2025 Агентство "НейроВнедрение"</p>
   </footer>
