@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -24,7 +24,7 @@
     /* Стили для шапки */
     header {
       padding: 20px;
-      text-align: left;
+      text-align: center;
     }
     header h1 {
       font-size: 2em;
@@ -105,15 +105,15 @@
       font-size: 1rem;
       line-height: 1.4;
     }
-    /* Стили для лампочки – не применяется универсальный класс */
+    /* Стили для лампочки – увеличена ширина до 120px */
     .lamp-wrapper {
       position: relative;
       top: 60px;
     }
     .lamp-wrapper img {
-      width: 90px;
+      width: 120px;
     }
-    /* Стили для цитаты – не затрагиваем кавычки */
+    /* Стили для цитаты – кавычки увеличены до 55px */
     .quote {
       position: relative;
       margin-top: 50px;
@@ -128,7 +128,7 @@
       position: absolute;
       top: -10px;
       left: 0;
-      width: 40px;
+      width: 55px;
       height: auto;
     }
     /* Контейнеры для секций с изображениями и текстом */
@@ -229,8 +229,7 @@
       animation: floatIn 2s ease-out forwards;
       animation-play-state: paused;
     }
-    /* Универсальный класс для изображений (за исключением лампочки и кавычек)
-       Увеличено с 300px до 400px (~+33%) */
+    /* Универсальный класс для изображений (за исключением лампочки и кавычек) – увеличен до 400px */
     .uniform {
       width: 400px;
       height: auto;
@@ -308,8 +307,8 @@
   <header>
     <h1>Агентство "НейроВнедрение"</h1>
   </header>
-  <!-- Hero секция -->
-  <section class="hero">
+  <!-- Hero секция с анимацией -->
+  <section class="hero scroll-animate">
     <div class="hero-content">
       <h1>НЕЙРОВНЕДРЕНИЕ</h1>
       <p>
