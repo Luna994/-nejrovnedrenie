@@ -136,8 +136,8 @@
     }
 
     .lamp-wrapper img {
-      width: 90px; /* Было 60px, увеличено на 50% */
-   }
+      width: 90px;
+    }
 
     .quote {
       position: relative;
@@ -157,6 +157,47 @@
       left: 0;
       width: 40px;
       height: auto;
+    }
+
+    .benefits, .business-results {
+      padding: 80px 40px;
+    }
+
+    .benefits-container, .business-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .benefits-image, .business-image {
+      flex: 1 1 40%;
+      text-align: center;
+    }
+
+    .benefits-image img, .business-image img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .benefits-list, .business-list {
+      flex: 1 1 55%;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .benefit-card, .business-card {
+      border: 1px solid #ffffff;
+      border-radius: 12px;
+      padding: 20px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(4px);
     }
 
     footer {
@@ -211,27 +252,50 @@
       <p>Мы создали эту программу, чтобы вы получили реальную отдачу от ИИ уже с первых дней. Минимум ручной работы, максимум результата.</p>
     </div>
   </section>
+
   <section class="benefits">
-  <div class="benefits-container">
-    <div class="benefits-image">
-      <img src="assets/часы.png" alt="Часы и иконки ИИ" />
+    <div class="benefits-container">
+      <div class="benefits-image">
+        <img src="assets/часы.png" alt="Часы и иконки ИИ" />
+      </div>
+      <div class="benefits-list">
+        <div class="benefit-card">
+          • Полностью автоматизировать все рутинные задачи без помощи программистов
+        </div>
+        <div class="benefit-card">
+          • Самостоятельно создавать профессиональный контент на основе передовых ИИ-технологий
+        </div>
+        <div class="benefit-card">
+          • Значительно повысить узнаваемость своего бренда и личного бренда
+        </div>
+        <div class="benefit-card">
+          • Высвободите ценное время и ресурсы, которые сможете направить на рост вашего бизнеса и достижение новых целей
+        </div>
+      </div>
     </div>
-    <div class="benefits-list">
-      <div class="benefit-card">
-        • Полностью автоматизировать все рутинные задачи без помощи программистов
+  </section>
+
+  <section class="business-results">
+    <div class="business-container">
+      <div class="business-image">
+        <img src="assets/мир.png" alt="Глобус и геометки" />
       </div>
-      <div class="benefit-card">
-        • Самостоятельно создавать профессиональный контент на основе передовых ИИ-технологий
-      </div>
-      <div class="benefit-card">
-        • Значительно повысить узнаваемость своего бренда и личного бренда
-      </div>
-      <div class="benefit-card">
-        • Высвободите ценное время и ресурсы, которые сможете направить на рост вашего бизнеса и достижение новых целей
+      <div class="business-list">
+        <div class="business-card">
+          • Радикально снизить затраты из-за отсутствия необходимости оплачивать работу массе сотрудников и фрилансерам
+        </div>
+        <div class="business-card">
+          • Увеличить заработок и доход
+        </div>
+        <div class="business-card">
+          • Получите возможность масштабировать свои процессы и бизнес
+        </div>
+        <div class="business-card">
+          • Сможете выйти на иностранные рынки с минимальными затратами и максимальной эффективностью
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <footer>
     <p>© 2025 Агентство "НейроВнедрение"</p>
