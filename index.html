@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
@@ -21,9 +21,13 @@
       background-position: center;
       color: #ffffff;
     }
+    /* Гладкая прокрутка */
+    html {
+      scroll-behavior: smooth;
+    }
     /* Стили для шапки */
     header {
-      padding:  5px;
+      padding: 5px;
       text-align: left;
     }
     header h1 {
@@ -42,34 +46,56 @@
       max-width: 50%;
       z-index: 2;
     }
-    .hero h1 {
+    .hero-content h1 {
       font-size: 3rem;
       font-weight: 800;
       margin-bottom: 20px;
     }
-    .hero p {
+    .hero-content p {
       font-size: 1.6rem;
       line-height: 1.5;
       margin-bottom: 20px;
     }
-    .agency {
-      font-size: 1.1rem;
-      opacity: 0.85;
-      font-weight: 500;
+    .agency-title {
+      font-size: 2rem; /* чуть меньше, чем h1 */
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: white;
+      opacity: 0.95;
     }
-   .agency-title {
-  font-size: 2rem; /* чуть меньше, чем 3rem у h1 */
-  font-weight: 600;
-  margin-bottom: 10px;
-  color: white; /* если фон тёмный */
-  opacity: 0.95;
-}
     .hero-image {
       max-width: 45%;
     }
     .hero-image img {
       width: 100%;
       height: auto;
+    }
+    /* Кнопка primary с анимацией */
+    .btn-primary {
+      display: inline-block;
+      background-color: #4b8df8;
+      color: white;
+      padding: 14px 28px;
+      font-size: 1.2rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 12px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+      transform: translateY(0);
+      margin-top: 20px;
+    }
+    .btn-primary:hover {
+      background-color: #366cd1;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
+    }
+    .btn-primary:active {
+      background-color: #2c55a5;
+      transform: translateY(1px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
     /* Общие отступы для секций (кроме hero) */
     .about, 
@@ -112,7 +138,7 @@
       font-size: 1rem;
       line-height: 1.4;
     }
-    /* Стили для лампочки – увеличена ширина до 120px */
+    /* Стили для лампочки */
     .lamp-wrapper {
       position: relative;
       top: 60px;
@@ -120,7 +146,7 @@
     .lamp-wrapper img {
       width: 120px;
     }
-    /* Стили для цитаты – кавычки увеличены до 55px */
+    /* Стили для цитаты */
     .quote {
       position: relative;
       margin-top: 50px;
@@ -138,23 +164,6 @@
       width: 55px;
       height: auto;
     }
-   .btn-primary {
-  display: inline-block;
-  background-color: #4b8df8;
-  color: white;
-  padding: 14px 28px;
-  font-size: 1.2rem;
-  font-weight: 600;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-  margin-top: 20px;
-}
-
-.btn-primary:hover {
-  background-color: #366cd1;
-}
-
     /* Контейнеры для секций с изображениями и текстом */
     .benefits-container, 
     .business-container {
@@ -253,7 +262,7 @@
       animation: floatIn 2s ease-out forwards;
       animation-play-state: paused;
     }
-    /* Универсальный класс для изображений (за исключением лампочки и кавычек) – увеличен до 400px */
+    /* Универсальный класс для изображений */
     .uniform {
       width: 400px;
       height: auto;
@@ -300,39 +309,21 @@
     td:has(> .cross) {
       color: #3fb24f;
     }
-   .contact {
-  background-color: #f4f4f4;
-  padding: 60px 80px;
-  text-align: left;
-  color: #222;
-}
-
-.contact h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-.contact p {
-  font-size: 1.2rem;
-  margin: 10px 0;
-}
-
-.btn-secondary {
-  display: inline-block;
-  background-color: #222;
-  color: #fff;
-  padding: 12px 24px;
-  border-radius: 6px;
-  font-weight: 500;
-  margin-top: 20px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-}
-
-.btn-secondary:hover {
-  background-color: #444;
-}
-
+    /* Стили для контактного блока */
+    .contact {
+      background-color: #f4f4f4;
+      padding: 60px 80px;
+      text-align: left;
+      color: #222;
+    }
+    .contact h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    .contact p {
+      font-size: 1.2rem;
+      margin: 10px 0;
+    }
     /* Адаптивные стили для мобильных устройств */
     @media (max-width: 768px) {
       .hero {
@@ -349,39 +340,38 @@
         max-width: 80%;
         margin-top: 20px;
       }
-      .hero h1 {
+      .hero-content h1 {
         font-size: 2.5rem;
         margin-bottom: 15px;
       }
-      .hero p {
+      .hero-content p {
         font-size: 1.2rem;
         margin-bottom: 15px;
       }
     }
-  
+  </style>
 </head>
 <body>
   <header>
-  <!--  <h1>Агентство "НейроВнедрение"</h1> -->
+    <!-- Можно добавить логотип или название -->
   </header>
-  <!-- Hero секция с анимацией ____________________________-->
-
- <section class="hero scroll-animate">
-  <div class="hero-content">
-    <p class="agency-title">АГЕНТСТВО “НейроВнедрение”</p>
-    <h1>НЕЙРОВНЕДРЕНИЕ</h1>
-    <p>
-      С ПРОФЕССИОНАЛЬНЫМ<br>
-      СОПРОВОЖДЕНИЕМ<br>
-      "ПОД КЛЮЧ"
-    </p>
-   <a href="#contact" class="btn-primary">Записаться на консультацию</a>
-
-  </div>
-  <div class="hero-image">
-    <img src="assets/1.png" alt="Персонаж">
-  </div>
-</section>
+  
+  <!-- HERO-СЕКЦИЯ -->
+  <section class="hero scroll-animate">
+    <div class="hero-content">
+      <p class="agency-title">АГЕНТСТВО “НейроВнедрение”</p>
+      <h1>НЕЙРОВНЕДРЕНИЕ</h1>
+      <p>
+        С ПРОФЕССИОНАЛЬНЫМ<br>
+        СОПРОВОЖДЕНИЕМ<br>
+        "ПОД КЛЮЧ"
+      </p>
+      <a href="#contact" class="btn-primary">Записаться на консультацию</a>
+    </div>
+    <div class="hero-image">
+      <img src="assets/1.png" alt="Персонаж">
+    </div>
+  </section>
 
   <!-- Секция "О компании" -->
   <section class="about scroll-animate">
@@ -407,6 +397,7 @@
       <p>Мы создали эту программу, чтобы вы получили реальную отдачу от ИИ уже с первых дней. Минимум ручной работы, максимум результата.</p>
     </div>
   </section>
+
   <!-- Секция "Преимущества" -->
   <section class="benefits scroll-animate">
     <div class="benefits-container scroll-animate">
@@ -429,6 +420,7 @@
       </div>
     </div>
   </section>
+
   <!-- Секция "Бизнес-результаты" -->
   <section class="business-results scroll-animate">
     <div class="business-container scroll-animate">
@@ -451,6 +443,7 @@
       </div>
     </div>
   </section>
+
   <!-- Flex-секция с изображением слева -->
   <section class="flex-section scroll-animate">
     <div class="image-left scroll-animate">
@@ -471,6 +464,7 @@
       </div>
     </div>
   </section>
+
   <!-- Flex-секция с изображением справа -->
   <section class="flex-section scroll-animate">
     <div class="image-right scroll-animate">
@@ -491,6 +485,7 @@
       </div>
     </div>
   </section>
+
   <!-- Flex-секция с изображением слева -->
   <section class="flex-section scroll-animate">
     <div class="image-left scroll-animate">
@@ -511,6 +506,7 @@
       </div>
     </div>
   </section>
+
   <!-- Flex-секция с изображением справа и заголовком -->
   <section class="flex-section scroll-animate reduced-gap">
     <div class="image-right scroll-animate">
@@ -530,6 +526,7 @@
       </div>
     </div>
   </section>
+
   <!-- Flex-секция с изображением слева -->
   <section class="flex-section scroll-animate reduced-gap">
     <div class="image-left scroll-animate">
@@ -546,6 +543,7 @@
       </div>
     </div>
   </section>
+
   <!-- Секция тарифов -->
   <section class="pricing scroll-animate">
     <h2>ТАРИФЫ</h2>
@@ -639,20 +637,23 @@
       </table>
     </div>
   </section>
- <section class="contact" id="contact">
-  <div class="contact-content">
-    <h2>Связаться с нами</h2>
-    <p>Оставьте заявку, и мы поможем внедрить ИИ в ваш бизнес</p>
-    <p><strong>Email:</strong> Dubrovskiy.Alex@gmail.com</p>
-    <p><strong>Telegram:</strong> @neyro_agent_bot</p>
-    <a href="https://t.me/neyro_agent_bot" class="btn-secondary">Написать в Telegram</a>
-  </div>
-</section>
+
+  <!-- КОНТАКТНЫЙ БЛОК -->
+  <section class="contact" id="contact">
+    <div class="contact-content">
+      <h2>Связаться с нами</h2>
+      <p>Оставьте заявку, и мы поможем внедрить ИИ в ваш бизнес</p>
+      <p><strong>Email:</strong> Dubrovskiy.Alex@gmail.com</p>
+      <p><strong>Telegram:</strong> @neyro_agent_bot</p>
+      <a href="https://t.me/neyro_agent_bot" class="btn-primary">Хочу внедрение ИИ</a>
+    </div>
+  </section>
 
   <!-- Подвал -->
   <footer>
     <p>© 2025 Агентство "НейроВнедрение"</p>
   </footer>
+  
   <!-- Скрипт анимации появления элементов при скролле -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
