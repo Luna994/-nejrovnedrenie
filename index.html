@@ -315,6 +315,33 @@
       text-align: left;
       color: #ffffff;
     }
+    /* По умолчанию: показываем десктопный вариант, скрываем мобильный */
+.desktop-pricing {
+  display: block;
+}
+.mobile-simple-pricing {
+  display: none;
+}
+
+/* На экранах уже 768px: скрываем десктопную версию, показываем упрощённую */
+@media (max-width: 768px) {
+  .desktop-pricing {
+    display: none;
+  }
+  .mobile-simple-pricing {
+    display: block;
+  }
+
+/* Общие стили, если нужно */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #fff;
+}
+td, th {
+  border: 1px solid #fff;
+  padding: 10px;
+}
 
    .contact h2 {
       font-size: 2.5rem;
@@ -596,99 +623,145 @@
   </section>
 
  <!-- Секция тарифов -->
+<!-- Секция тарифов -->
 <section class="pricing scroll-animate">
   <h2>ТАРИФЫ</h2>
-  <div class="table-container">
+
+  <!-- ДЕСКТОПНАЯ (полная) ТАБЛИЦА, скрывается на мобильных -->
+  <div class="desktop-pricing">
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th rowspan="2">Вариант участия</th>
+            <th colspan="2">Мини-группа</th>
+            <th colspan="2">Корпоративный формат</th>
+          </tr>
+          <tr>
+            <th>НейроВнедрение</th>
+            <th>НейроВнедрение +</th>
+            <th>НейроВнедрение</th>
+            <th>НейроВнедрение +</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Автоматизация рутинных задач</td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Создание нейросотрудников</td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>3 GPT-ассистента</td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Дополнительные ассистенты под задачу</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Голосовой Telegram-бот</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Telegram-бот с бизнес-моделью</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Кастомные сценарии автоматизации в MAKE</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Сценарии автоматизации в MAKE (2 шт.)</td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td>Персональная онлайн-консультация (2 ч)</td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+            <td><span class="check">&#10008;</span></td>
+            <td><span class="cross">&#10004;</span></td>
+          </tr>
+          <tr>
+            <td><strong>СТОИМОСТЬ ($)</strong></td>
+            <td>2 000</td>
+            <td>4 000</td>
+            <td>6 000</td>
+            <td>8 000</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- МОБИЛЬНАЯ (упрощённая) ВЕРСИЯ, скрывается на десктопе -->
+  <div class="mobile-simple-pricing">
     <table>
-      <thead>
-        <tr>
-          <th rowspan="2">Вариант участия</th>
-          <th colspan="2">Мини-группа</th>
-          <th colspan="2">Корпоративный формат</th>
-        </tr>
-        <tr>
-          <th>НейроВнедрение</th>
-          <th>НейроВнедрение +</th>
-          <th>НейроВнедрение</th>
-          <th>НейроВнедрение +</th>
-        </tr>
-      </thead>
       <tbody>
         <tr>
-          <td data-label="Вариант участия">Автоматизация рутинных задач</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
+          <td>Вариант участия</td>
+          <td colspan="2">Мини-группа</td>
         </tr>
         <tr>
-          <td data-label="Вариант участия">Создание нейросотрудников</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
+          <td></td>
+          <td>НейроВнедрение</td>
+          <td>НейроВнедрение +</td>
         </tr>
         <tr>
-          <td data-label="Вариант участия">3 GPT-ассистента</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
+          <td>СТОИМОСТЬ ($)</td>
+          <td>2 000</td>
+          <td>4 000</td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <table>
+      <tbody>
+        <tr>
+          <td>Вариант участия</td>
+          <td colspan="2">Корпоративный формат</td>
         </tr>
         <tr>
-          <td data-label="Вариант участия">Дополнительные ассистенты под задачу</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
+          <td></td>
+          <td>НейроВнедрение</td>
+          <td>НейроВнедрение +</td>
         </tr>
         <tr>
-          <td data-label="Вариант участия">Голосовой Telegram-бот</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td data-label="Вариант участия">Telegram-бот с бизнес-моделью</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td data-label="Вариант участия">Кастомные сценарии автоматизации в MAKE</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td data-label="Вариант участия">Сценарии автоматизации в MAKE (2 шт.)</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td data-label="Вариант участия">Персональная онлайн-консультация (2 ч)</td>
-          <td data-label="НейроВнедрение (мини-группа)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (мини-группа)"><span class="cross">&#10004;</span></td>
-          <td data-label="НейроВнедрение (корпоративный формат)"><span class="check">&#10008;</span></td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)"><span class="cross">&#10004;</span></td>
-        </tr>
-        <tr>
-          <td data-label="Вариант участия"><strong>СТОИМОСТЬ ($)</strong></td>
-          <td data-label="НейроВнедрение (мини-группа)">2 000</td>
-          <td data-label="НейроВнедрение+ (мини-группа)">4 000</td>
-          <td data-label="НейроВнедрение (корпоративный формат)">6 000</td>
-          <td data-label="НейроВнедрение+ (корпоративный формат)">8 000</td>
+          <td>СТОИМОСТЬ ($)</td>
+          <td>6 000</td>
+          <td>8 000</td>
         </tr>
       </tbody>
     </table>
   </div>
-</section>
 
+</section>
 
   <!-- КОНТАКТНЫЙ БЛОК -->
 <section class="contact" id="contact">
